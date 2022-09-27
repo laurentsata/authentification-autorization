@@ -1,14 +1,35 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import GoHomeButton from "@components/GoHomeButton";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../contexts/AuthContext";
 
 export default function Connexion() {
   const [formState, setFormState] = useState({
-    email: "",
-    password: "",
+    email: "lolo@mail.fr",
+    password: "lolo",
   });
+  const { setIsAuthenticated } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/api/login`, { ...formState })
+      .then((response) => response.data)
+      .then((data) => {
+        window.localStorage.setItem("authToken", data.token);
+        axios.defaults.headers.Authorization = `Bearer ${data.token}`;
+      })
+      .then(() => {
+        setIsAuthenticated(true);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.error(err);
+      }); /* si tout va bien,POUR GESTION ERREUR */
 
     // Requete de connexion -> stocker le token dans le local storage -> ajouter le token dans les autorisations
     // -> rediriger l'utilisateur vers la page d'accueil

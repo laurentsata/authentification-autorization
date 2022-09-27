@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AuthAPI from "@services/AuthAPI";
+import AuthContext from "../contexts/AuthContext";
 
 export default function Home() {
-  const handleLogout = () => {};
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    AuthAPI.logout();
+    setIsAuthenticated(false);
+  };
 
   return (
     <header className="App-header">
@@ -10,19 +18,23 @@ export default function Home() {
           <Link to="/">
             <li>Accueil - accessible par tous les visiteurs</li>
           </Link>
-          <Link to="/login">
-            <li>Connexion</li>
-          </Link>
+          {!isAuthenticated && (
+            <>
+              <Link to="/login">
+                <li>Connexion</li>
+              </Link>
 
-          <Link to="/signup">
-            <li>Inscription</li>
-          </Link>
-
+              <Link to="/signup">
+                <li>Inscription</li>
+              </Link>
+            </>
+          )}
           <Link to="/movies">
             <li>
               Films - <em>accessible par tous les utilisateurs connectés</em>
             </li>
           </Link>
+
           <Link to="/users">
             <li>
               Utilisateurs - <em>accessible par les comptes admin</em>
@@ -36,9 +48,11 @@ export default function Home() {
           </Link>
         </ul>
       </nav>
-      <button type="button" onClick={() => handleLogout()}>
-        Deconnexion
-      </button>
+      {isAuthenticated /* le boutton s'affiche qu'une fois connecté */ && (
+        <button type="button" onClick={() => handleLogout()}>
+          Deconnexion
+        </button>
+      )}
     </header>
   );
 }

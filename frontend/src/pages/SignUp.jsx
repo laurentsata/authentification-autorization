@@ -17,7 +17,9 @@ export default function SignUp() {
 
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/api/users`, { ...formState })
-      .then((response) => response.data);
+      .then(
+        (response) => response.data
+      ); /* si tout va bien,POUR GESTION ERREUR, NE PAS METTRE EN POST */
   };
 
   return (

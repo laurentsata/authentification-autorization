@@ -35,7 +35,7 @@ const verifyPassword = (req, res) => {
         });
 
         delete req.user.hashedPassword;
-        res.send({ token, user: req.user });
+        res.send({ token, user: req.user }); // renvoie au client lr token et le req.user recupère toutes les infos de user
       } else {
         res.sendStatus(401);
       }
