@@ -10,6 +10,7 @@ import Profile from "@pages/Profile";
 import UnauthorizedPage from "@pages/UnauthorizedPage";
 import { useState } from "react";
 import PrivateRoute from "@components/PrivateRoute";
+import Header from "@components/Header";
 import AuthContext from "./contexts/AuthContext";
 
 AuthAPI.setup();
@@ -22,24 +23,27 @@ function App() {
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
       <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login/" element={<Connexion />} />
-          <Route path="/signup/" element={<SignUp />} />
+        <div className="containerHome">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login/" element={<Connexion />} />
+            <Route path="/signup/" element={<SignUp />} />
 
-          <Route
-            path="/movies/"
-            element={
-              <PrivateRoute>
-                <Movies />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/movies/"
+              element={
+                <PrivateRoute>
+                  <Movies />
+                </PrivateRoute>
+              }
+            />
 
-          <Route path="/users/" element={<Users />} />
-          <Route path="/my-profile/" element={<Profile />} />
-          <Route path="/unauthorized/" element={<UnauthorizedPage />} />
-        </Routes>
+            <Route path="/users/" element={<Users />} />
+            <Route path="/my-profile/" element={<Profile />} />
+            <Route path="/unauthorized/" element={<UnauthorizedPage />} />
+          </Routes>
+        </div>
       </Router>
     </AuthContext.Provider>
   );
