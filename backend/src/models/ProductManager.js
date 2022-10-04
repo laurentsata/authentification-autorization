@@ -44,7 +44,7 @@ class ProductManager extends AbstractManager {
       product.image,
       product.price,
       product_category.name as category,
-      energy.name as energy_id from ${this.table}
+      energy.name, energy.image as energy_id from ${this.table}
       join product_category on product.category=product_category.id
       join energy on product.energy_id=energy.id;
       `

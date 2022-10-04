@@ -1,0 +1,16 @@
+.container-footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  width: 100%;
+}
+.time,
+.contact,
+.marque {
+  padding-top: 4%;
+  padding-bottom: 4%;
+  color: #ffff;
+  width: 28%;
+  font-size: 120%;
+  text-align: center;
+}

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import GoHomeButton from "@components/GoHomeButton";
+// import GoHomeButton from "@components/GoHomeButton";
 
 export default function Movies() {
   const [movies, setMovies] = useState("");
@@ -14,9 +14,9 @@ export default function Movies() {
 
   return (
     <>
-      <GoHomeButton />
+      {/* <GoHomeButton /> */}
       <p>Page pouvant être accessible par tous les users</p>
-      <h2>Liste de films</h2>
+      <h2>Team Modelpro</h2>
       <ul>
         {movies &&
           movies.map((movie) => (

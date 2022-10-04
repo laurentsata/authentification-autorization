@@ -1,7 +1,6 @@
 // import Product from "@components/Product";
 // eslint-disable-next-line import/no-unresolved
-import Product from "@components/Product";
-// import ProductsList from "@components/ProductsList";
+import ProductsList from "@components/ProductsList";
 import "./Home.css";
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
 
   return (
     <div className="container-home">
-      toto
       <div className="ban">
         <img
           src="https://res.cloudinary.com/dbkscupri/image/upload/v1664791572/modelpro/supercar_k5jsi3.png"
@@ -22,13 +20,9 @@ export default function Home() {
         />
       </div>
       <div className="product">
-        produits carte
-        {/* <ProductsList /> */}
-        <Product />
+        <ProductsList />
       </div>
-      <div className="footer">
-        tata le footer******************************************
-      </div>
+      <div className="footer" />
     </div>
   );
 }

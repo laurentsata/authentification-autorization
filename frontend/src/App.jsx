@@ -11,6 +11,7 @@ import UnauthorizedPage from "@pages/UnauthorizedPage";
 import { useState } from "react";
 // import PrivateRoute from "@components/PrivateRoute";
 import Header from "@components/Header";
+import Footer from "@components/Footer";
 import AuthContext from "./contexts/AuthContext";
 import "./App.css";
 
@@ -46,6 +47,9 @@ function App() {
             <Route path="/my-profile/" element={<Profile />} />
             <Route path="/unauthorized/" element={<UnauthorizedPage />} />
           </Routes>
+          <div className="footer-home">
+            <Footer />
+          </div>
         </div>
       </Router>
     </AuthContext.Provider>

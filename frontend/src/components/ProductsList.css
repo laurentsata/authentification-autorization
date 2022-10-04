@@ -1,7 +1,8 @@
 .leon {
-  background-color: #f4e9dc;
+  padding-top: 6%;
   display: flex;
   justify-content: center;
+  padding-left: 2%;
   flex-wrap: wrap;
   /* border: 2px solid rgb(88, 25, 198); */
   position: relative;

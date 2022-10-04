@@ -9,8 +9,8 @@ import "./Connexion.css";
 
 export default function Connexion() {
   const [formState, setFormState] = useState({
-    email: "lolo@mail.fr",
-    password: "lolo",
+    email: "luc@mail",
+    password: "luc",
   });
   const { setIsAuthenticated } = useContext(AuthContext);
 
@@ -39,36 +39,41 @@ export default function Connexion() {
   };
   return (
     <div className="container-connection-inscrition">
-      {/* <GoHomeButton /> */}
-      <div className="connection">
-        <h2>Formulaire de connexion</h2>
-        <form onSubmit={(event) => handleSubmit(event)}>
-          <input
-            className="email"
-            type="email"
-            value={formState.email}
-            onChange={(e) =>
-              setFormState({
-                ...formState,
-                email: e.target.value,
-              })
-            }
-            placeholder="Email"
-          />
-          <input
-            className="password"
-            type="password"
-            placeholder="Mot de passe"
-            value={formState.password}
-            onChange={(e) =>
-              setFormState({ ...formState, password: e.target.value })
-            }
-          />
-          <input className="buttonc" type="submit" />
-        </form>
+      <div className="title">
+        <h2>Mon compte</h2>
       </div>
-      <div className="inscription">
-        <SignUP />
+      {/* <GoHomeButton /> */}
+      <div className="bloc">
+        <div className="connection">
+          <h2>Connexion</h2>
+          <form onSubmit={(event) => handleSubmit(event)}>
+            <input
+              className="email"
+              type="email"
+              value={formState.email}
+              onChange={(e) =>
+                setFormState({
+                  ...formState,
+                  email: e.target.value,
+                })
+              }
+              placeholder="Email"
+            />
+            <input
+              className="password"
+              type="password"
+              placeholder="Mot de passe"
+              value={formState.password}
+              onChange={(e) =>
+                setFormState({ ...formState, password: e.target.value })
+              }
+            />
+            <input className="buttonc" type="submit" value="IDENTIFICATION" />
+          </form>
+        </div>
+        <div className="inscription">
+          <SignUP />
+        </div>
       </div>
     </div>
   );

@@ -15,10 +15,12 @@ export default function Header() {
   return (
     <header className="App-header">
       <div className="logo">
-        <img
-          src="https://res.cloudinary.com/dbkscupri/image/upload/v1664791556/modelpro/logovecto_k8yxyr.png"
-          alt="logo modelpro"
-        />
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/dbkscupri/image/upload/v1664791556/modelpro/logovecto_k8yxyr.png"
+            alt="logo modelpro"
+          />
+        </Link>
       </div>
       <div className="navbar">
         <nav>

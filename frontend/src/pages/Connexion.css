@@ -1,5 +1,15 @@
 .container-connection-inscrition {
   display: flex;
+  /* justify-content: space-around; */
+  flex-direction: column;
+  padding-top: 2%;
+}
+.title {
+  display: flex;
+  justify-content: center;
+}
+.bloc {
+  display: flex;
   justify-content: space-around;
 }
 .connection {
@@ -11,6 +21,14 @@
   flex-direction: column;
   padding: 0.2vh;
 }
+.email,
+.password,
+.a,
+.b,
+.c,
+.d {
+  width: 150%;
+}
 .inscription {
   padding: 5vh;
 }
@@ -18,4 +36,10 @@
 .password,
 .buttonc {
   margin-top: 2vh;
+}
+.buttonc {
+  background-color: #fe5e00;
+  color: #ffffff;
+  border: none;
+  font-size: 1.7vh;
 }

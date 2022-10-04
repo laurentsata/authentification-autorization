@@ -1,15 +1,14 @@
 import { useState } from "react";
 // import GoHomeButton from "@components/GoHomeButton";
 import axios from "axios";
+import "./SignUp.css";
 
 export default function SignUp() {
   const [formState, setFormState] = useState({
     email: "",
+    password: "",
     firstname: "",
     lastname: "",
-    city: "",
-    language: "",
-    password: "",
   });
 
   const handleSignUp = () => {
@@ -25,9 +24,13 @@ export default function SignUp() {
   return (
     <>
       {/* <GoHomeButton /> */}
-      <h2>Formulaire d'inscription</h2>
+      <h2>S'enregistrer</h2>
       <form onSubmit={() => handleSignUp()}>
+        <br />
+
+        <br />
         <input
+          className="a"
           type="text"
           value={formState.email}
           onChange={(e) =>
@@ -40,6 +43,17 @@ export default function SignUp() {
         />
         <br />
         <input
+          className="b"
+          type="password"
+          placeholder="Mot de passe"
+          value={formState.password}
+          onChange={(e) =>
+            setFormState({ ...formState, password: e.target.value })
+          }
+        />
+        <br />
+        <input
+          className="c"
           type="text"
           value={formState.firstname}
           onChange={(e) =>
@@ -52,6 +66,7 @@ export default function SignUp() {
         />
         <br />
         <input
+          className="d"
           type="text"
           value={formState.lastname}
           onChange={(e) =>
@@ -63,40 +78,7 @@ export default function SignUp() {
           placeholder="Nom"
         />
         <br />
-        <input
-          type="text"
-          value={formState.city}
-          onChange={(e) =>
-            setFormState({
-              ...formState,
-              city: e.target.value,
-            })
-          }
-          placeholder="Ville"
-        />
-        <br />
-        <input
-          type="text"
-          value={formState.language}
-          onChange={(e) =>
-            setFormState({
-              ...formState,
-              language: e.target.value,
-            })
-          }
-          placeholder="Langage"
-        />
-        <br />
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          value={formState.password}
-          onChange={(e) =>
-            setFormState({ ...formState, password: e.target.value })
-          }
-        />
-        <br />
-        <input type="submit" value="S'inscrire" />
+        <input className="buttonc" type="submit" value="S'ENREGISTRER" />
       </form>
     </>
   );
