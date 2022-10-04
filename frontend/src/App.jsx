@@ -9,9 +9,10 @@ import AuthAPI from "@services/AuthAPI";
 import Profile from "@pages/Profile";
 import UnauthorizedPage from "@pages/UnauthorizedPage";
 import { useState } from "react";
-import PrivateRoute from "@components/PrivateRoute";
+// import PrivateRoute from "@components/PrivateRoute";
 import Header from "@components/Header";
 import AuthContext from "./contexts/AuthContext";
+import "./App.css";
 
 AuthAPI.setup();
 
@@ -24,7 +25,9 @@ function App() {
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
       <Router>
         <div className="containerHome">
-          <Header />
+          <div className="header-home">
+            <Header />
+          </div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login/" element={<Connexion />} />
@@ -33,9 +36,9 @@ function App() {
             <Route
               path="/movies/"
               element={
-                <PrivateRoute>
-                  <Movies />
-                </PrivateRoute>
+                // <PrivateRoute>
+                <Movies />
+                // </PrivateRoute>
               }
             />
 

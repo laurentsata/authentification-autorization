@@ -1,0 +1,11 @@
+/* .container-home{
+    display: flex;
+} */
+.ban {
+  display: flex;
+  justify-content: center;
+}
+.ban img {
+  padding-top: 5vh;
+  width: 90%;
+}

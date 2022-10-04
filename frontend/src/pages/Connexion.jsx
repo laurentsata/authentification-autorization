@@ -1,8 +1,11 @@
 import { useState, useContext } from "react";
-import GoHomeButton from "@components/GoHomeButton";
+// import GoHomeButton from "@components/GoHomeButton";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+// eslint-disable-next-line import/no-unresolved
+import SignUP from "@pages/SignUp";
 import AuthContext from "../contexts/AuthContext";
+import "./Connexion.css";
 
 export default function Connexion() {
   const [formState, setFormState] = useState({
@@ -35,31 +38,38 @@ export default function Connexion() {
     // -> rediriger l'utilisateur vers la page d'accueil
   };
   return (
-    <>
-      <GoHomeButton />
-      <h2>Formulaire de connexion</h2>
-      <form onSubmit={(event) => handleSubmit(event)}>
-        <input
-          type="email"
-          value={formState.email}
-          onChange={(e) =>
-            setFormState({
-              ...formState,
-              email: e.target.value,
-            })
-          }
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          value={formState.password}
-          onChange={(e) =>
-            setFormState({ ...formState, password: e.target.value })
-          }
-        />
-        <input type="submit" />
-      </form>
-    </>
+    <div className="container-connection-inscrition">
+      {/* <GoHomeButton /> */}
+      <div className="connection">
+        <h2>Formulaire de connexion</h2>
+        <form onSubmit={(event) => handleSubmit(event)}>
+          <input
+            className="email"
+            type="email"
+            value={formState.email}
+            onChange={(e) =>
+              setFormState({
+                ...formState,
+                email: e.target.value,
+              })
+            }
+            placeholder="Email"
+          />
+          <input
+            className="password"
+            type="password"
+            placeholder="Mot de passe"
+            value={formState.password}
+            onChange={(e) =>
+              setFormState({ ...formState, password: e.target.value })
+            }
+          />
+          <input className="buttonc" type="submit" />
+        </form>
+      </div>
+      <div className="inscription">
+        <SignUP />
+      </div>
+    </div>
   );
 }

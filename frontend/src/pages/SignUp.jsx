@@ -1,5 +1,5 @@
 import { useState } from "react";
-import GoHomeButton from "@components/GoHomeButton";
+// import GoHomeButton from "@components/GoHomeButton";
 import axios from "axios";
 
 export default function SignUp() {
@@ -24,7 +24,7 @@ export default function SignUp() {
 
   return (
     <>
-      <GoHomeButton />
+      {/* <GoHomeButton /> */}
       <h2>Formulaire d'inscription</h2>
       <form onSubmit={() => handleSignUp()}>
         <input

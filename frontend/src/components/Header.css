@@ -1,0 +1,22 @@
+.logo img {
+  width: 20%;
+  padding-left: 5vh;
+}
+.navbar {
+  padding-top: 5vh;
+}
+.navbar ul,
+.navbar li {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar a {
+  /* font-size: 2vh; */
+  list-style-type: none;
+  text-decoration: none;
+  color: #0d1110;
+}

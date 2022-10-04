@@ -1,0 +1,21 @@
+.container-connection-inscrition {
+  display: flex;
+  justify-content: space-around;
+}
+.connection {
+  padding: 5vh;
+}
+
+.connection input {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2vh;
+}
+.inscription {
+  padding: 5vh;
+}
+
+.password,
+.buttonc {
+  margin-top: 2vh;
+}

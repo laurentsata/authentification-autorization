@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthAPI from "@services/AuthAPI";
 import AuthContext from "../contexts/AuthContext";
+import "./Header.css";
 
 export default function Header() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
@@ -19,7 +20,7 @@ export default function Header() {
           alt="logo modelpro"
         />
       </div>
-      <div>
+      <div className="navbar">
         <nav>
           <ul>
             <Link to="/">
@@ -28,21 +29,21 @@ export default function Header() {
             {!isAuthenticated && (
               <>
                 <Link to="/login">
-                  <li>Connexion</li>
+                  <li>Mon compte</li>
                 </Link>
 
                 <Link to="/signup">
-                  <li>Inscription</li>
+                  <li>Boite à question</li>
                 </Link>
               </>
             )}
             <Link to="/movies">
               <li>
-                Films - <em>accessible par tous les utilisateurs connectés</em>
+                Team - <em>accessible par tous les utilisateurs</em>
               </li>
             </Link>
 
-            <Link to="/users">
+            {/* <Link to="/users">
               <li>
                 Utilisateurs - <em>accessible par les comptes admin</em>
               </li>
@@ -52,7 +53,7 @@ export default function Header() {
                 Mon profil -{" "}
                 <em>accessible que par l'utilisateur connecté concerné</em>
               </li>
-            </Link>
+            </Link> */}
           </ul>
         </nav>
       </div>
