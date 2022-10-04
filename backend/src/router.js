@@ -8,6 +8,7 @@ const productControllers = require("./controllers/productControllers");
 
 const userControllers = require("./controllers/userControllers");
 const movieControllers = require("./controllers/movieControllers");
+const teamControllers = require("./controllers/teamControllers");
 
 router.get("/products", productControllers.browse);
 router.get("/products/:id", productControllers.read);
@@ -23,7 +24,7 @@ router.post(
 );
 
 router.get("/api/movies", movieControllers.getAll);
-
+router.get("/api/teams", teamControllers.getAll);
 // ROUTES PROTEGEES
 router.use(verifyToken);
 

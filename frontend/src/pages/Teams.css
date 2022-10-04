@@ -1,0 +1,17 @@
+.title-team {
+  display: flex;
+  justify-content: center;
+}
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 2%;
+}
+.cardo {
+  display: flex;
+  flex-direction: row;
+  flex-direction: column;
+  padding-right: 5vh;
+  padding-top: 2vh;
+}

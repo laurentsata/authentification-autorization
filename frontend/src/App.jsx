@@ -3,6 +3,7 @@ import Connexion from "@pages/Connexion";
 import Home from "@pages/Home";
 import SignUp from "@pages/SignUp";
 import Movies from "@pages/Movies";
+import Teams from "@pages/Teams";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Users from "@pages/Users";
 import AuthAPI from "@services/AuthAPI";
@@ -33,16 +34,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login/" element={<Connexion />} />
             <Route path="/signup/" element={<SignUp />} />
-
-            <Route
-              path="/movies/"
-              element={
-                // <PrivateRoute>
+            <Route path="//Teams/" element={<Teams />} />
+            <Route path="/movies/" element={<Movies />} />
+            {/* // <PrivateRoute>
                 <Movies />
                 // </PrivateRoute>
-              }
-            />
-
+              }/> */}
             <Route path="/users/" element={<Users />} />
             <Route path="/my-profile/" element={<Profile />} />
             <Route path="/unauthorized/" element={<UnauthorizedPage />} />

@@ -26,7 +26,7 @@ export default function Header() {
         <nav>
           <ul>
             <Link to="/">
-              <li>Accueil - accessible par tous les visiteurs</li>
+              <li>Accueil - tous les visiteurs</li>
             </Link>
             {!isAuthenticated && (
               <>
@@ -39,9 +39,9 @@ export default function Header() {
                 </Link>
               </>
             )}
-            <Link to="/movies">
+            <Link to="/teams">
               <li>
-                Team - <em>accessible par tous les utilisateurs</em>
+                Team - <em>tous les utilisateurs</em>
               </li>
             </Link>
 
