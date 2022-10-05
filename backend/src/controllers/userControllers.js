@@ -2,7 +2,7 @@
 const models = require("../models");
 
 const getUsers = (req, res) => {
-  models.users
+  models.user
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -14,7 +14,7 @@ const getUsers = (req, res) => {
 };
 
 const getUserById = (req, res) => {
-  models.users
+  models.user
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -32,11 +32,11 @@ const getUserById = (req, res) => {
 const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
   const { email } = req.body;
 
-  models.users
+  models.user
     .findUserByEmailWithPassword(email)
-    .then(([users]) => {
-      if (users[0] != null) {
-        req.user = users[0];
+    .then(([user]) => {
+      if (user[0] != null) {
+        req.user = user[0];
 
         next();
       } else {
@@ -54,7 +54,7 @@ const postUser = (req, res) => {
 
   // TODO validations (length, format...)
 
-  models.users
+  models.user
     .insert(user)
     .then(([result]) => {
       res.location(`/users/${result.insertId}`).sendStatus(201);

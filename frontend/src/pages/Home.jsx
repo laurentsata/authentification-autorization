@@ -1,4 +1,3 @@
-// import Product from "@components/Product";
 // eslint-disable-next-line import/no-unresolved
 import ProductsList from "@components/ProductsList";
 import "./Home.css";

@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthAPI from "@services/AuthAPI";
 import AuthContext from "../contexts/AuthContext";
+// import CurrentUserContext from "../contexts/CurrentUserContext";
 import "./Header.css";
 
 export default function Header() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  // const { setCurrentUser } = useContext(CurrentUserContext);
 
   const handleLogout = () => {
     AuthAPI.logout();
@@ -26,36 +28,32 @@ export default function Header() {
         <nav>
           <ul>
             <Link to="/">
-              <li>Accueil - tous les visiteurs</li>
+              <li>Accueil</li>
             </Link>
             {!isAuthenticated && (
-              <>
-                <Link to="/login">
-                  <li>Mon compte</li>
-                </Link>
-
-                <Link to="/signup">
-                  <li>Boite à question</li>
-                </Link>
-              </>
+              <Link to="/login">
+                <li>Mon compte</li>
+              </Link>
             )}
-            <Link to="/teams">
-              <li>
-                Team - <em>tous les utilisateurs</em>
-              </li>
+            <Link to="/login">
+              <li>Boite à question</li>
             </Link>
 
-            {/* <Link to="/users">
-              <li>
-                Utilisateurs - <em>accessible par les comptes admin</em>
-              </li>
+            <Link to="/teams">
+              <li>Team</li>
             </Link>
-            <Link to="/my-profile">
-              <li>
-                Mon profil -{" "}
-                <em>accessible que par l'utilisateur connecté concerné</em>
-              </li>
-            </Link> */}
+            {/* ********************************** */}
+            {isAuthenticated /* le boutton s'affiche qu'une fois connecté */ && (
+              <Link to="/users">
+                <li>Administrateur</li>
+              </Link>
+            )}
+            {isAuthenticated /* le boutton s'affiche qu'une fois connecté */ && (
+              <Link to="/my-profile">
+                <li>Mon profil </li>
+              </Link>
+            )}
+            {/* ************************************* */}
           </ul>
         </nav>
       </div>

@@ -17,6 +17,7 @@ router.get("/productsdetails", productControllers.readProductsDetails);
 
 router.post("/api/users", hashPassword, userControllers.postUser);
 
+// router.get("/api/users", userControllers.getUsers);
 router.post(
   "/api/login",
   userControllers.getUserByEmailWithPasswordAndPassToNext,

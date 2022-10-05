@@ -1,12 +1,12 @@
 .leon {
   padding-top: 6%;
   display: flex;
-  justify-content: center;
-  padding-left: 2%;
+  justify-content: space-around;
+  padding-left: 6.5%;
   flex-wrap: wrap;
   /* border: 2px solid rgb(88, 25, 198); */
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 100%;
 }
 

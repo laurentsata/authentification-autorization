@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import Connexion from "@pages/Connexion";
 import Home from "@pages/Home";
@@ -10,10 +12,14 @@ import AuthAPI from "@services/AuthAPI";
 import Profile from "@pages/Profile";
 import UnauthorizedPage from "@pages/UnauthorizedPage";
 import { useState } from "react";
+
 // import PrivateRoute from "@components/PrivateRoute";
+import AdminRoute from "@components/AdminRoute";
+
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import AuthContext from "./contexts/AuthContext";
+import CurrentUserContext from "./contexts/CurrentUserContext";
 import "./App.css";
 
 AuthAPI.setup();
@@ -22,33 +28,42 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     AuthAPI.isAuthenticated
   );
-
+  const [currentUser, setCurrentUser] = useState(AuthAPI.isCurrentUser);
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-      <Router>
-        <div className="containerHome">
-          <div className="header-home">
-            <Header />
-          </div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login/" element={<Connexion />} />
-            <Route path="/signup/" element={<SignUp />} />
-            <Route path="//Teams/" element={<Teams />} />
-            <Route path="/movies/" element={<Movies />} />
-            {/* // <PrivateRoute>
+      <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
+        <Router>
+          <div className="containerHome">
+            <div className="header-home">
+              <Header />
+            </div>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login/" element={<Connexion />} />
+              <Route path="/signup/" element={<SignUp />} />
+              <Route path="/teams/" element={<Teams />} />
+              <Route path="/movies/" element={<Movies />} />
+              {/* // <PrivateRoute>
                 <Movies />
                 // </PrivateRoute>
               }/> */}
-            <Route path="/users/" element={<Users />} />
-            <Route path="/my-profile/" element={<Profile />} />
-            <Route path="/unauthorized/" element={<UnauthorizedPage />} />
-          </Routes>
-          <div className="footer-home">
-            <Footer />
+              <Route
+                path="/users/"
+                element={
+                  <AdminRoute>
+                    <Users />
+                  </AdminRoute>
+                }
+              />
+              <Route path="/my-profile/" element={<Profile />} />
+              <Route path="/unauthorized/" element={<UnauthorizedPage />} />
+            </Routes>
+            <div className="footer-home">
+              <Footer />
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </CurrentUserContext.Provider>
     </AuthContext.Provider>
   );
 }

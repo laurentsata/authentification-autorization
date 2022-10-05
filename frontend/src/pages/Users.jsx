@@ -1,4 +1,4 @@
-import GoHomeButton from "@components/GoHomeButton";
+// import GoHomeButton from "@components/GoHomeButton";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -14,7 +14,7 @@ export default function Users() {
 
   return (
     <>
-      <GoHomeButton />
+      {/* <GoHomeButton /> */}
 
       <p>Page qui ne doit être accessible que par les rôles administrateurs</p>
       <h2>Liste des utilisateurs</h2>

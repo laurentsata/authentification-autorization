@@ -2,7 +2,7 @@ const AbstractManager = require("./AbstractManager");
 
 class UserManager extends AbstractManager {
   constructor() {
-    super({ table: "users" });
+    super({ table: "user" });
   }
 
   findUserByEmailWithPassword(email) {
@@ -14,15 +14,8 @@ class UserManager extends AbstractManager {
 
   insert(user) {
     return this.connection.query(
-      `INSERT INTO ${this.table} (firstname, lastname, email, city, language, hashedPassword) VALUES (?, ?, ?, ?, ?, ?)`,
-      [
-        user.firstname,
-        user.lastname,
-        user.email,
-        user.city,
-        user.language,
-        user.hashedPassword,
-      ]
+      `INSERT INTO ${this.table} (firstname, lastname, email, hashedPassword) VALUES (?, ?, ?, ?)`,
+      [user.firstname, user.lastname, user.email, user.hashedPassword]
     );
   }
 

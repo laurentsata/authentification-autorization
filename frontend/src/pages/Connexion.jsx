@@ -3,15 +3,18 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line import/no-unresolved
+import jwtDecode from "jwt-decode";
 import SignUP from "@pages/SignUp";
+// import CurrentUserContext from "../contexts/CurrentUserContext";
 import AuthContext from "../contexts/AuthContext";
 import "./Connexion.css";
 
 export default function Connexion() {
   const [formState, setFormState] = useState({
-    email: "luc@mail",
-    password: "luc",
+    email: "luke@mail",
+    password: "luke",
   });
+  const [errorMessage, setErrorMessage] = useState("");
   const { setIsAuthenticated } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -19,23 +22,26 @@ export default function Connexion() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // Requete de connexion -> stocker le token dans le local storage -> ajouter le token dans les autorisations
+    // -> rediriger l'utilisateur vers la page d'accueil
+
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/api/login`, { ...formState })
       .then((response) => response.data)
       .then((data) => {
         window.localStorage.setItem("authToken", data.token);
         axios.defaults.headers.Authorization = `Bearer ${data.token}`;
+        setIsAuthenticated(true);
+        // eslint-disable-next-line no-undef
+        setCurrentUser(jwtDecode(data.token));
       })
       .then(() => {
-        setIsAuthenticated(true);
         navigate("/");
       })
       .catch((err) => {
         console.error(err);
+        setErrorMessage("Identifiants incorrects");
       }); /* si tout va bien,POUR GESTION ERREUR */
-
-    // Requete de connexion -> stocker le token dans le local storage -> ajouter le token dans les autorisations
-    // -> rediriger l'utilisateur vers la page d'accueil
   };
   return (
     <div className="container-connection-inscrition">
@@ -68,6 +74,7 @@ export default function Connexion() {
                 setFormState({ ...formState, password: e.target.value })
               }
             />
+            <p>{errorMessage}</p>
             <input className="buttonc" type="submit" value="IDENTIFICATION" />
           </form>
         </div>
