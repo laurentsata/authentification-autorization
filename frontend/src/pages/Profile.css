@@ -1,0 +1,19 @@
+.cont-profile {
+  display: flex;
+  flex-direction: column;
+}
+.cont-profile .h2 {
+  padding-left: 5%;
+  padding-bottom: 2%;
+  font-size: 70%;
+}
+.cont-profile p {
+  display: flex;
+  color: #fe5e00;
+  font-size: 100%;
+  padding-left: 46%;
+}
+.profile-title {
+  display: flex;
+  justify-content: center;
+}

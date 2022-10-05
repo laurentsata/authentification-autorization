@@ -57,11 +57,13 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      {isAuthenticated /* le boutton s'affiche qu'une fois connecté */ && (
-        <button type="button" onClick={() => handleLogout()}>
-          Deconnexion
-        </button>
-      )}
+      <div className="deconnexion">
+        {isAuthenticated /* le boutton s'affiche qu'une fois connecté */ && (
+          <button type="button" onClick={() => handleLogout()}>
+            Deconnexion
+          </button>
+        )}
+      </div>
     </header>
   );
 }

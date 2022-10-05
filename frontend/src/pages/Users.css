@@ -16,4 +16,12 @@
 }
 .admin-bol {
   padding-left: 115%;
+  color: #fe5e00;
+  font-size: 110%;
+}
+
+.bloc-admin tr {
+  background-color: #fe5e00;
+  color: #ffff;
+  font-size: 110%;
 }

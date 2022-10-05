@@ -3,8 +3,7 @@
   flex-direction: column;
   /* border: 2px solid black; */
   width: 120%;
-
-  height: 65vh;
+  max-height: 112%;
   /* margin: 1% 5% 1% 1%; */
   border-radius: 10px;
   background-color: white;
