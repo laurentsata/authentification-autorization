@@ -8,7 +8,7 @@ const sendEmail = (req) => {
   const { email } = req.body;
   mailer.sendMail(
     {
-      from: "amina.aitm@gmail.com",
+      from: "testmailprojetmodelpro@gmail.com",
       to: email,
       subject: `Bienvenue ${req.body.firstname}`,
       text: "Nous te souhaitons la bienvenue",

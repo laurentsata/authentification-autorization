@@ -1,6 +1,7 @@
 // import GoHomeButton from "@components/GoHomeButton";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "./Users.css";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
@@ -16,27 +17,34 @@ export default function Users() {
     <>
       {/* <GoHomeButton /> */}
 
-      <p>Page qui ne doit être accessible que par les rôles administrateurs</p>
-      <h2>Liste des utilisateurs</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Prénom</th>
-            <th>Nom</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users &&
-            users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.firstname}</td>
-                <td>{user.lastname}</td>
-                <td>{user.email}</td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
+      <div className="bloc-admin">
+        <h2>Liste des utilisateurs</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Prénom</th>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Admin</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users &&
+              users.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.firstname}</td>
+                  <td>{user.lastname}</td>
+                  <div className="admin-mail">
+                    <td className="admin-m">{user.email}</td>
+                  </div>
+                  <div className="admin-bol">
+                    <td>{user.isAdmin}</td>
+                  </div>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }

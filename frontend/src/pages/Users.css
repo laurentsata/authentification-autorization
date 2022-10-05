@@ -1,0 +1,19 @@
+.bloc-admin {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 2%;
+}
+.bloc-admin h2 {
+  padding-bottom: 2%;
+  padding-left: 45%;
+}
+.bloc-admin td {
+  padding-left: 9%;
+}
+.admin-mail {
+  padding-left: 45%;
+}
+.admin-bol {
+  padding-left: 115%;
+}
