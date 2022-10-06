@@ -1,0 +1,39 @@
+.contact-section h2 {
+  display: flex;
+  justify-content: center;
+  padding-top: 2.1%;
+  padding-bottom: 1%;
+}
+.your-name {
+  display: flex;
+  padding-left: 5%;
+  padding-bottom: 1%;
+}
+.your-mail {
+  display: flex;
+  padding-left: 5%;
+  padding-bottom: 1%;
+}
+.subject {
+  display: flex;
+  padding-left: 5%;
+  padding-bottom: 1%;
+}
+.message {
+  display: flex;
+  padding-left: 5%;
+  padding-bottom: 1%;
+}
+.contact-form-message {
+  width: 20%;
+  height: 8vh;
+}
+.bottom {
+  display: flex;
+  padding-left: 21%;
+}
+.contact-form-btn {
+  background-color: #fe5e00;
+  border: none;
+  color: #ffff;
+}

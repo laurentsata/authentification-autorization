@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line import/no-unresolved
 import jwtDecode from "jwt-decode";
+// eslint-disable-next-line import/no-unresolved
 import SignUP from "@pages/SignUp";
 // import CurrentUserContext from "../contexts/CurrentUserContext";
 import AuthContext from "../contexts/AuthContext";

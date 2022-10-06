@@ -11,6 +11,8 @@ import Users from "@pages/Users";
 import AuthAPI from "@services/AuthAPI";
 import Profile from "@pages/Profile";
 import UnauthorizedPage from "@pages/UnauthorizedPage";
+import Contact from "@components/Contact";
+
 import { useState } from "react";
 
 // import PrivateRoute from "@components/PrivateRoute";
@@ -43,6 +45,7 @@ function App() {
               <Route path="/signup/" element={<SignUp />} />
               <Route path="/teams/" element={<Teams />} />
               <Route path="/movies/" element={<Movies />} />
+              <Route path="/contact" element={<Contact />} />
               {/* // <PrivateRoute>
                 <Movies />
                 // </PrivateRoute>

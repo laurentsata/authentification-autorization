@@ -1,6 +1,7 @@
 .title-team {
   display: flex;
   justify-content: center;
+  padding-top: 2.1%;
 }
 .item {
   display: flex;

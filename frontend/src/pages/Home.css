@@ -4,6 +4,7 @@
 .ban {
   display: flex;
   justify-content: center;
+  padding-top: 10%;
 }
 .ban img {
   padding-top: 5vh;

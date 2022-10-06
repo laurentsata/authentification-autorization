@@ -35,7 +35,7 @@ export default function Header() {
                 <li>Mon compte</li>
               </Link>
             )}
-            <Link to="/login">
+            <Link to="/contact">
               <li>Boite à question</li>
             </Link>
 

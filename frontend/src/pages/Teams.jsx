@@ -15,8 +15,6 @@ export default function Teams() {
 
   return (
     <>
-      {/* <GoHomeButton /> */}
-      <p>Page pouvant être accessible par tous les users</p>
       <div className="title-team">
         <h2>Team Modelpro</h2>
       </div>

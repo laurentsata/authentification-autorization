@@ -7,7 +7,7 @@ class ProductManager extends AbstractManager {
 
   insert(producttoto) {
     return this.connection.query(
-      `insert into ${this.table} (name, price, image, describe, category, energy_id) values (?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (name, price, image, describe, category, energy_id) values (?, ?, ?, ?, ?, ?)`,
       [
         producttoto.name,
         producttoto.image,

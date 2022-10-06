@@ -3,7 +3,9 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable import/newline-after-import */
 // eslint-disable-next-line import/extensions
-const mailer = require("./mailer");
+require("dotenv").config();
+
+const mailer = require("./mailers");
 const sendEmail = (req) => {
   const { email } = req.body;
   mailer.sendMail(
