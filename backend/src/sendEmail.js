@@ -6,11 +6,12 @@
 require("dotenv").config();
 
 const mailer = require("./mailers");
+
 const sendEmail = (req) => {
   const { email } = req.body;
   mailer.sendMail(
     {
-      from: "testmailprojetmodelpro@gmail.com",
+      from: "laurent.saez@sncf.fr",
       to: email,
       subject: `Bienvenue ${req.body.firstname}`,
       text: "Nous te souhaitons la bienvenue",

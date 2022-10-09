@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const AbstractManager = require("./AbstractManager");
 
 class ProductManager extends AbstractManager {
@@ -32,6 +33,46 @@ class ProductManager extends AbstractManager {
         producttata.energy_id,
         producttata.id,
       ]
+    );
+  }
+
+  findAllWithCategory() {
+    return this.connection
+      .query(`select product.id, product.name, product.price, product.image, product.describe, energy.name, energy.image as energy_id, JSON_ARRAYAGG(JSON_OBJECT("ID", category.id, "Type", category.name)) as categories from ${this.table}
+    left join product_category ON product_category.product_id = product.id
+    left join category on product_category.category_id = category.id
+    join energy on product.energy_id = energy.id
+    group by product.id`);
+  }
+
+  findWithCategory(id) {
+    return this.connection.query(
+      `select product.id, product.name, product.price, product.image, product.decribe, energy.name, energy.image as energy_id, JSON_ARRAYAGG(JSON_OBJECT("ID", category.id, "Type", category.name)) as categories from ${this.table}
+      left join product_category ON product_category.product_id = product.id
+      left join category on product_category.category_id = category.id where product.id = ?`,
+      [id]
+    );
+  }
+
+  // eslint-disable-next-line no-dupe-class-members
+  insert(product) {
+    return this.connection.query(
+      `insert into ${this.table} (name, price, image, describe) values (?, ?, ?, ?)`,
+      [product.name, product.price, product.image, product.describe]
+    );
+  }
+
+  insertCategories(productId, category) {
+    return this.connection.query(
+      `insert into product_category (product_id, category_id) values (?, ?)`,
+      [productId, category]
+    );
+  }
+
+  deleteCategories(productId) {
+    return this.connection.query(
+      `delete from product_category where product_id = ?`,
+      [productId]
     );
   }
 

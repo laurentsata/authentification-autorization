@@ -1,0 +1,27 @@
+.Admin-header {
+  padding-top: 2%;
+  padding-bottom: 3%;
+}
+
+/* .admin-navbar{
+    margin-top: 20vh;
+} */
+
+.navbar {
+  padding-top: 5vh;
+}
+.admin-navbar ul,
+.admin-navbar li {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.admin-navbar a {
+  /* font-size: 2vh; */
+  list-style-type: none;
+  text-decoration: none;
+  color: #fe5e00;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable react/jsx-no-constructed-context-values */
@@ -12,6 +13,13 @@ import AuthAPI from "@services/AuthAPI";
 import Profile from "@pages/Profile";
 import UnauthorizedPage from "@pages/UnauthorizedPage";
 import Contact from "@components/Contact";
+import AdminProductsPage from "@pages/AdminProductsPage";
+import AdminCategoriesPage from "@pages/AdminCategoriesPage";
+import AdminProductPage from "@pages/AdminProductPage";
+import AdminCreateProductPage from "@pages/AdminCreateProductPage";
+import AdminCreateCategoryPage from "@pages/AdminCreateCategoryPage";
+import AdminCategoryPage from "@pages/AdminCategoryPage";
+import Admin from "@pages/Admin";
 
 import { useState } from "react";
 
@@ -38,6 +46,7 @@ function App() {
           <div className="containerHome">
             <div className="header-home">
               <Header />
+              <Admin />
             </div>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -57,6 +66,35 @@ function App() {
                     <Users />
                   </AdminRoute>
                 }
+              />
+              <Route
+                path="/admin/"
+                element={
+                  <AdminRoute>
+                    <Admin />
+                  </AdminRoute>
+                }
+              />
+              <Route path="/admin/products" element={<AdminProductsPage />} />
+              <Route
+                path="/admin/products/:id"
+                element={<AdminProductPage />}
+              />
+              <Route
+                path="/admin/products/create"
+                element={<AdminCreateProductPage />}
+              />
+              <Route
+                path="/admin/categories"
+                element={<AdminCategoriesPage />}
+              />
+              <Route
+                path="/admin/categories/:id"
+                element={<AdminCategoryPage />}
+              />
+              <Route
+                path="/admin/categories/create"
+                element={<AdminCreateCategoryPage />}
               />
               <Route path="/my-profile/" element={<Profile />} />
               <Route path="/unauthorized/" element={<UnauthorizedPage />} />

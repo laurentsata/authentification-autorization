@@ -43,11 +43,7 @@ export default function Header() {
               <li>Team</li>
             </Link>
             {/* ********************************** */}
-            {isAuthenticated /* le boutton s'affiche qu'une fois connecté */ && (
-              <Link to="/users">
-                <li>Administrateur</li>
-              </Link>
-            )}
+
             {isAuthenticated /* le boutton s'affiche qu'une fois connecté */ && (
               <Link to="/my-profile">
                 <li>Mon profil </li>
