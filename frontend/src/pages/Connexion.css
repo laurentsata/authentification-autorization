@@ -39,7 +39,8 @@
 }
 .buttonc {
   background-color: #fe5e00;
+  border-radius: 15vh;
   color: #ffffff;
   border: none;
-  font-size: 1.7vh;
+  font-size: 1.6vh;
 }
