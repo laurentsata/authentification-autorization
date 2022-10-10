@@ -14,7 +14,7 @@ class CategoryManager extends AbstractManager {
 
   update(category) {
     return this.connection.query(
-      `update ${this.table} set name, set image = ?, ? where id = ?`,
+      `update ${this.table} set name, image = ?, ? where id = ?`,
       [category.name, category.image, category.id]
     );
   }

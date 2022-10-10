@@ -14,11 +14,12 @@ export default function SignUp() {
   const handleSignUp = () => {
     // Requete création d'un utilisateur
 
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/api/users`, { ...formState })
-      .then(
-        (response) => response.data
-      ); /* si tout va bien,POUR GESTION ERREUR, NE PAS METTRE EN POST */
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users`, {
+      ...formState,
+    });
+    // .then(
+    //   (response) => response.data
+    // ); /* si tout va bien,POUR GESTION ERREUR, NE PAS METTRE EN POST */
   };
 
   return (
@@ -78,7 +79,7 @@ export default function SignUp() {
           placeholder="Nom"
         />
         <br />
-        <input className="buttonc" type="submit" value="S'ENREGISTRER" />
+        <input className="buttonc" type="submit" value="S'enregistrer" />
       </form>
     </>
   );

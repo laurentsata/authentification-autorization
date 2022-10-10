@@ -49,7 +49,7 @@ const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
     });
 };
 
-const postUser = (req, res) => {
+const postUser = (req, res, next) => {
   const user = req.body;
 
   // TODO validations (length, format...)
@@ -58,6 +58,7 @@ const postUser = (req, res) => {
     .insert(user)
     .then(([result]) => {
       res.location(`/users/${result.insertId}`).sendStatus(201);
+      next();
     })
     .catch((err) => {
       console.error(err);

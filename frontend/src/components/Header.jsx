@@ -1,17 +1,19 @@
+/* eslint-disable import/no-unresolved */
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthAPI from "@services/AuthAPI";
 import AuthContext from "../contexts/AuthContext";
-// import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 import "./Header.css";
 
 export default function Header() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
-  // const { setCurrentUser } = useContext(CurrentUserContext);
+  const { setCurrentUser } = useContext(CurrentUserContext);
 
   const handleLogout = () => {
     AuthAPI.logout();
     setIsAuthenticated(false);
+    setCurrentUser({});
   };
 
   return (

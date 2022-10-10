@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 // eslint-disable-next-line import/no-unresolved
 import SignUP from "@pages/SignUp";
-// import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 import AuthContext from "../contexts/AuthContext";
 import "./Connexion.css";
 
@@ -17,6 +17,7 @@ export default function Connexion() {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const { setIsAuthenticated } = useContext(AuthContext);
+  const { setCurrentUser } = useContext(CurrentUserContext);
 
   const navigate = useNavigate();
 
@@ -76,7 +77,7 @@ export default function Connexion() {
               }
             />
             <p>{errorMessage}</p>
-            <input className="buttonc" type="submit" value="IDENTIFICATION" />
+            <input className="buttonc" type="submit" value=" Identification " />
           </form>
         </div>
         <div className="inscription">

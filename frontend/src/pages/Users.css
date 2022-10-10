@@ -12,16 +12,27 @@
   padding-left: 9%;
 }
 .admin-mail {
-  padding-left: 45%;
+  display: flex;
+  justify-content: center;
+  /* padding-left: 30%; */
+  margin-top: 8%;
 }
+/* .admin-mail tr{
+  padding: ;
+} */
 .admin-bol {
-  padding-left: 115%;
+  margin-left: 112%;
+  padding-bottom: 5%;
   color: #fe5e00;
   font-size: 110%;
 }
 
-.bloc-admin tr {
+.bloc-admin tr,
+.bloc-admin td {
   background-color: #fe5e00;
   color: #ffff;
   font-size: 110%;
 }
+/* .bloc-admin td{
+  background-color: red;
+} */

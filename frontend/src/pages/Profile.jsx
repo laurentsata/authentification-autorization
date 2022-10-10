@@ -25,6 +25,7 @@ export default function Profile() {
       <p>Nom de famille : {user.lastname}</p>
       <p>Prénom : {user.firstname}</p>
       <p>Email : {user.email}</p>
+      <p>Administrateur (1/0) : {user.isAdmin}</p>
     </div>
   );
 }

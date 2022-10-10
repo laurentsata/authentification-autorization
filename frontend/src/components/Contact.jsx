@@ -1,6 +1,6 @@
 import "./Contact.css";
 
-export default function Footer() {
+export default function Contact() {
   return (
     <div className="contact-section">
       <h2>Boite à question</h2>
