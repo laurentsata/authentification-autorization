@@ -20,6 +20,8 @@ import AdminCreateProductPage from "@pages/AdminCreateProductPage";
 import AdminCreateCategoryPage from "@pages/AdminCreateCategoryPage";
 import AdminCategoryPage from "@pages/AdminCategoryPage";
 import Admin from "@pages/Admin";
+import Categories from "@components/Categories";
+import Category from "@components/Category";
 
 import { useState } from "react";
 
@@ -55,6 +57,8 @@ function App() {
               <Route path="/teams/" element={<Teams />} />
               <Route path="/movies/" element={<Movies />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/categories" element={<Categories />} />
+              <Route path="/category" element={<Category />} />
               {/* // <PrivateRoute>
                 <Movies />
                 // </PrivateRoute>

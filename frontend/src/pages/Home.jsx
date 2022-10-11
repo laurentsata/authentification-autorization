@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import ProductsList from "@components/ProductsList";
 import "./Home.css";
+// import Categories from "@components/Categories"
 
 export default function Home() {
   // const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
@@ -20,6 +21,7 @@ export default function Home() {
       </div>
       <div className="product">
         <ProductsList />
+        {/* <Categories /> */}
       </div>
       <div className="footer" />
     </div>

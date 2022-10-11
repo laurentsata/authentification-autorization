@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 const { hashPassword, verifyPassword, verifyToken } = require("./auth.js");
+
 const productControllers = require("./controllers/productControllers");
 const userControllers = require("./controllers/userControllers");
 const categoryControllers = require("./controllers/categoryControllers");
@@ -60,10 +61,11 @@ router.post(
 
 // router.get("/api/movies", movieControllers.getAll);
 router.get("/api/teams", teamControllers.getAll);
+
 // ROUTES PROTEGEES
-router.use(verifyToken);
+// router.use(verifyToken);
 
 router.get("/api/users", userControllers.getUsers);
-router.get("/api/users/:id", userControllers.getUserById);
+router.get("/api/users/:id", verifyToken, userControllers.getUserById);
 
 module.exports = router;

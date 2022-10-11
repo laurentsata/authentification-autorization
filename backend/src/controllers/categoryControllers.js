@@ -7,8 +7,9 @@ const getAll = (req, res) => {
       const categories = [];
       rows.map((row) =>
         categories.push({
-          value: row.id,
-          label: row.name,
+          id: row.id,
+          name: row.name,
+          image: row.image,
         })
       );
       res.send(categories);

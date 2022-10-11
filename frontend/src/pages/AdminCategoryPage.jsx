@@ -29,7 +29,7 @@ export default function AdminCategoryPage() {
 
   return (
     <>
-      <h2>Page d'une categorie</h2>
+      <p>Page d'une categorie</p>
       <form
         onSubmit={(e) => {
           e.preventDefault();
