@@ -1,7 +1,9 @@
+/* eslint-disable import/no-unresolved */
 import axios from "axios";
 import { useState } from "react";
 // import CategoriesCheckbox from "@components/CategoriesCheckbox";
-import AdminCategoryPage from "./AdminCategoryPage";
+// import AdminCategoryPage from "./AdminCategoryPage";
+import Categories from "@components/Categories";
 
 export default function AdminCreateCategoryPage() {
   const [category, setCategory] = useState({
@@ -22,6 +24,7 @@ export default function AdminCreateCategoryPage() {
 
   return (
     <div>
+      <Categories />
       <p>Page de création d'une catégorie</p>
       <form
         onSubmit={(e) => {
@@ -54,7 +57,8 @@ export default function AdminCreateCategoryPage() {
         <input type="submit" value="Créer une catégorie" />
       </form>
 
-      <AdminCategoryPage />
+      {/* <AdminCategoryPage /> */}
+      {/* <Categories /> */}
     </div>
   );
 }

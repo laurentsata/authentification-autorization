@@ -58,6 +58,7 @@ function App() {
               <Route path="/movies/" element={<Movies />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/categories" element={<Categories />} />
+              <Route path="/categories/:id" element={<AdminCategoryPage />} />
               <Route path="/category" element={<Category />} />
               {/* // <PrivateRoute>
                 <Movies />

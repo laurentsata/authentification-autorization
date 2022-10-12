@@ -21,14 +21,14 @@ class CategoryManager extends AbstractManager {
 
   update(category) {
     return this.connection.query(
-      `update from ${this.table} set name = ?, image = ?, ? where id = ?`,
+      `update ${this.table} set name = ?, image = ? where id = ?`,
       [category.name, category.image, category.id]
     );
   }
 
-  delete(category) {
+  delete(categoryId) {
     return this.connection.query(`delete from ${this.table} where id = ?`, [
-      category.id,
+      categoryId,
     ]);
   }
 }

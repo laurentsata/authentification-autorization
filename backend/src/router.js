@@ -11,6 +11,7 @@ const categoryControllers = require("./controllers/categoryControllers");
 const productCategoryControllers = require("./controllers/productCategoryControllers");
 // const movieControllers = require("./controllers/movieControllers");
 const teamControllers = require("./controllers/teamControllers");
+const { sendEmail } = require("./sendEmail.js");
 
 router.get("/products", productControllers.browse);
 
@@ -22,7 +23,7 @@ router.delete("/products/:id", productControllers.destroy);
 // router.get("/categories/:id", categoryControllers.read);
 router.get("/productsdetails", productControllers.readProductsDetails);
 
-router.post("/api/users", hashPassword, userControllers.postUser);
+router.post("/api/users", hashPassword, userControllers.postUser, sendEmail);
 
 router.get("/categories", categoryControllers.getAll);
 router.get("/categories/:id", categoryControllers.getById);

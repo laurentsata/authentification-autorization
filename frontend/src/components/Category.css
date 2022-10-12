@@ -1,0 +1,22 @@
+.categories-container {
+  display: flex;
+  padding-left: 15%;
+  color: #ffff;
+}
+.cat-id {
+  display: flex;
+  justify-content: center;
+  margin-left: 5%;
+  width: 5%;
+  background-color: #fe5e00;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.cat-name {
+  display: flex;
+  justify-content: center;
+  margin-left: 5%;
+  width: 10%;
+  background-color: #fe5e00;
+}
