@@ -18,7 +18,7 @@ export default function AdminProductPage() {
 
   const [selectedCategories, setSelectedCategories] = useState("");
 
-  // Appel API qui récupère le nom, le rix, l'image et la description
+  // Appel API qui récupère le nom, le prix, l'image et la description
   // la publication d'un produit - + catégorie ?
   useEffect(() => {
     axios

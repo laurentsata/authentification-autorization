@@ -23,7 +23,7 @@ function ProductsList() {
             category={product.category}
             name={product.name}
             image={product.image}
-            describe={product.describe}
+            description={product.description}
             price={product.price}
             energy={product.energy_id}
           />

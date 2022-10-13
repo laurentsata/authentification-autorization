@@ -11,8 +11,9 @@ export default function AdminCreateProductPage() {
     name: "",
     price: "",
     image: "",
-    describe: "",
-    categories: "",
+    description: "",
+    categories: [],
+    energy_id: "",
   });
 
   const [selectedCategories, setSelectedCategories] = useState("");
@@ -74,12 +75,23 @@ export default function AdminCreateProductPage() {
         />
         <input
           type="text"
-          value={product.describe}
+          value={product.description}
           placeholder="Description du produit"
           onChange={(e) =>
             setProduct({
               ...product,
               describe: e.target.value,
+            })
+          }
+        />
+        <input
+          type="text"
+          value={product.energy_id}
+          placeholder="Energie"
+          onChange={(e) =>
+            setProduct({
+              ...product,
+              energy_id: e.target.value,
             })
           }
         />

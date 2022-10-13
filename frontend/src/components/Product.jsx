@@ -2,7 +2,7 @@ import React from "react";
 import "./Product.css";
 
 // eslint-disable-next-line react/prop-types
-function Product({ name, price, image, describe, category, energy }) {
+function Product({ name, price, image, description, category, energy }) {
   return (
     <div className="listProducts">
       <div className="listContainer">
@@ -17,7 +17,7 @@ function Product({ name, price, image, describe, category, energy }) {
             {/* <div className="name">
               <h3>{name}</h3>
             </div> */}
-            <div className="decrip">{describe}</div>
+            <div className="decrip">{description}</div>
           </div>
         </div>
         <div className="listUn">

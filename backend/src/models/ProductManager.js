@@ -8,7 +8,7 @@ class ProductManager extends AbstractManager {
 
   insert(producttoto) {
     return this.connection.query(
-      `insert into ${this.table} (name, price, image, describe, category, energy_id) values (?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (name, price, image, description, category, energy_id) values (?, ?, ?, ?, ?, ?)`,
       [
         producttoto.name,
         producttoto.image,
@@ -23,7 +23,7 @@ class ProductManager extends AbstractManager {
 
   update(producttata) {
     return this.connection.query(
-      `update ${this.table} set name = ?, image = ?, describe = ?, price = ?, category_id = ?, energy_id = ? where id = ?`,
+      `update ${this.table} set name = ?, image = ?, description = ?, price = ?, category_id = ?, energy_id = ? where id = ?`,
       [
         producttata.name,
         producttata.image,
@@ -38,7 +38,7 @@ class ProductManager extends AbstractManager {
 
   findAllWithCategory() {
     return this.connection
-      .query(`select product.id, product.name, product.price, product.image, product.describe, energy.name, energy.image as energy_id, JSON_ARRAYAGG(JSON_OBJECT("ID", category.id, "Type", category.name)) as categories from ${this.table}
+      .query(`select product.id, product.name, product.price, product.image, product.description, energy.name, energy.image as energy_id, JSON_ARRAYAGG(JSON_OBJECT("ID", category.id, "Type", category.name)) as categories from ${this.table}
     left join product_category ON product_category.product_id = product.id
     left join category on product_category.category_id = category.id
     join energy on product.energy_id = energy.id
@@ -57,8 +57,14 @@ class ProductManager extends AbstractManager {
   // eslint-disable-next-line no-dupe-class-members
   insert(product) {
     return this.connection.query(
-      `insert into ${this.table} (name, price, image, describe) values (?, ?, ?, ?)`,
-      [product.name, product.price, product.image, product.describe]
+      `insert into ${this.table} (name, price, image, description, energy_id) values (?, ?, ?, ?, ?)`,
+      [
+        product.name,
+        product.price,
+        product.image,
+        product.description,
+        product.energy_id,
+      ]
     );
   }
 
@@ -80,7 +86,7 @@ class ProductManager extends AbstractManager {
     return this.connection.query(
       `
       select product.id,
-      product.describe,
+      product.description,
       product.name,
       product.image,
       product.price,
