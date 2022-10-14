@@ -13,7 +13,7 @@ export default function AdminProductPage() {
     name: "",
     price: "",
     image: "",
-    describe: "",
+    description: "",
   });
 
   const [selectedCategories, setSelectedCategories] = useState("");
