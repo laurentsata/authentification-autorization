@@ -54,9 +54,6 @@ export default function Categories() {
             <Category categories={category} />
           </Link>
         ))}
-      {/* <Link to="/admin/categories">
-        <p>Vers l'admin</p>
-      </Link> */}
     </div>
   );
 }

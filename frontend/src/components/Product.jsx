@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable react/prop-types */
 import React from "react";
 import "./Product.css";
 
@@ -7,7 +9,10 @@ function Product({ name, price, image, description, category, energy }) {
     <div className="listProducts">
       <div className="listContainer">
         <div className="listCat">
-          <h2>{category}</h2>{" "}
+          {category &&
+            category.map((category) => (
+              <h2 key={category.ID}>{category.Type}</h2>
+            ))}
         </div>
         <div className="listName">
           <div className="listPrice">

@@ -6,32 +6,36 @@ class ProductManager extends AbstractManager {
     super({ table: "product" });
   }
 
-  insert(producttoto) {
+  insert(product) {
     return this.connection.query(
-      `insert into ${this.table} (name, price, image, description, category, energy_id) values (?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (name, price, image, description, energy_id) values (?, ?, ?, ?, ?)`,
       [
-        producttoto.name,
-        producttoto.image,
-        producttoto.describe,
-        producttoto.price,
-        producttoto.category,
-        producttoto.energy_id,
-        producttoto.id,
+        product.name,
+        product.price,
+        product.image,
+        product.description,
+        product.energy_id,
       ]
     );
   }
 
-  update(producttata) {
+  insertCategory(productId, categoryId) {
     return this.connection.query(
-      `update ${this.table} set name = ?, image = ?, description = ?, price = ?, category_id = ?, energy_id = ? where id = ?`,
+      `insert into product_category (product_id, category_id) values (?, ?)`,
+      [productId, categoryId]
+    );
+  }
+
+  update(product) {
+    return this.connection.query(
+      `update ${this.table} set name = ?, image = ?, description = ?, price = ?, energy_id = ? where id = ?`,
       [
-        producttata.name,
-        producttata.image,
-        producttata.describe,
-        producttata.price,
-        producttata.category,
-        producttata.energy_id,
-        producttata.id,
+        product.name,
+        product.image,
+        product.describe,
+        product.price,
+        product.energy_id,
+        product.id,
       ]
     );
   }
@@ -54,27 +58,6 @@ class ProductManager extends AbstractManager {
     );
   }
 
-  // eslint-disable-next-line no-dupe-class-members
-  insert(product) {
-    return this.connection.query(
-      `insert into ${this.table} (name, price, image, description, energy_id) values (?, ?, ?, ?, ?)`,
-      [
-        product.name,
-        product.price,
-        product.image,
-        product.description,
-        product.energy_id,
-      ]
-    );
-  }
-
-  insertCategories(productId, category) {
-    return this.connection.query(
-      `insert into product_category (product_id, category_id) values (?, ?)`,
-      [productId, category]
-    );
-  }
-
   deleteCategories(productId) {
     return this.connection.query(
       `delete from product_category where product_id = ?`,
@@ -82,21 +65,21 @@ class ProductManager extends AbstractManager {
     );
   }
 
-  getProductsDetails() {
-    return this.connection.query(
-      `
-      select product.id,
-      product.description,
-      product.name,
-      product.image,
-      product.price,
-      product_category.name as category,
-      energy.name, energy.image as energy_id from ${this.table}
-      join product_category on product.category=product_category.id
-      join energy on product.energy_id=energy.id;
-      `
-    );
-  }
+  // getProductsDetails() {
+  //   return this.connection.query(
+  //     `
+  //     select product.id,
+  //     product.description,
+  //     product.name,
+  //     product.image,
+  //     product.price,
+  //     product_category.name as category,
+  //     energy.name, energy.image as energy_id from ${this.table}
+  //     join product_category on product.category=product_category.id
+  //     join energy on product.energy_id=energy.id;
+  //     `
+  //   );
+  // }
 }
 
 module.exports = ProductManager;

@@ -80,7 +80,7 @@ export default function AdminCreateProductPage() {
           onChange={(e) =>
             setProduct({
               ...product,
-              describe: e.target.value,
+              description: e.target.value,
             })
           }
         />

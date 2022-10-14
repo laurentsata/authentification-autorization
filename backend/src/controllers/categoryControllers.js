@@ -10,6 +10,8 @@ const getAll = (req, res) => {
           id: row.id,
           name: row.name,
           image: row.image,
+          value: row.id,
+          label: row.name,
         })
       );
       res.send(categories);

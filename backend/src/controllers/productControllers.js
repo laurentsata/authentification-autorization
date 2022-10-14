@@ -111,7 +111,7 @@ const post = (req, res) => {
         .send(`${result.insertId}`);
       product.categories &&
         product.categories.map((category) =>
-          models.product.insertCategories(`${result.insertId}`, category.value)
+          models.product.insertCategory(`${result.insertId}`, category.value)
         );
     })
     .catch((err) => {
@@ -191,17 +191,17 @@ const destroy = (req, res) => {
 //     });
 // };
 
-const readProductsDetails = (req, res) => {
-  models.product
-    .getProductsDetails()
-    .then(([rows]) => {
-      res.send(rows);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
+// const readProductsDetails = (req, res) => {
+//   models.product
+//     .getProductsDetails()
+//     .then(([rows]) => {
+//       res.send(rows);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.sendStatus(500);
+//     });
+// };
 // const readProductsCategory = (req, res) => {
 //   models.product
 //     .getProductWithCategory()
@@ -225,6 +225,6 @@ module.exports = {
   destroy,
   // edit,
   // add,
-  readProductsDetails,
+  // readProductsDetails,
   // readProductsCategory,
 };
