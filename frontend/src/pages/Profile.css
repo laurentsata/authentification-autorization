@@ -17,3 +17,12 @@
   display: flex;
   justify-content: center;
 }
+@media screen and (max-width: 490px) {
+  .cont-profile {
+    padding-top: 10%;
+    padding-bottom: 13%;
+  }
+  .cont-profile p {
+    padding-left: 25%;
+  }
+}

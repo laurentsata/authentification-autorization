@@ -14,11 +14,58 @@
   font-size: 120%;
   text-align: center;
 }
+.contact p a {
+  list-style-type: none;
+  text-decoration: none;
+  color: #ffff;
+}
+
+.contact p a:hover {
+  color: #fe5e00;
+}
+.contact .phone {
+  display: none;
+}
+.contact .desktop {
+  display: flex;
+  justify-content: center;
+}
 @media screen and (max-width: 490px) {
   .time,
   .contact,
   .marque {
     font-size: 40%;
     text-align: center;
+  }
+
+  .contact .phone {
+    display: flex;
+    justify-content: center;
+  }
+  .contact .desktop {
+    display: none;
+  }
+  /* .contact:hover, .contact p a:hover{
+  font-size: x-large;
+  z-index: 100;
+  position: absolute;
+  left:20%;
+  bottom: 1%;
+  color: #fe5e00;
+} */
+  .time,
+  .contact,
+  .marque {
+    display: block;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    color: #ffff;
+    width: 88%;
+    font-size: 100%;
+    text-align: center;
+  }
+  .container-footer {
+    flex-direction: column;
+    align-items: center;
   }
 }

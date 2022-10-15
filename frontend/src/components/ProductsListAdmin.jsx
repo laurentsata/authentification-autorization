@@ -2,7 +2,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Product from "./Product";
-import "./ProductsList.css";
+// import "./ProductsList.css";
 import { Link } from "react-router-dom";
 
 function ProductsListAdmin() {
@@ -20,12 +20,13 @@ function ProductsListAdmin() {
   };
   useEffect(() => getProducts(), []);
   return (
-    <div className="leon">
+    <div className="leon1">
       {products &&
         products.map((product) => (
           <Link to={`/productsdetails/${product.id}`} key={product.id}>
             <Product
               key={product.id}
+              id={product}
               category={product.categories}
               name={product.name}
               image={product.image}

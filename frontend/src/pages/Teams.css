@@ -16,3 +16,9 @@
   padding-right: 5vh;
   padding-top: 2vh;
 }
+
+@media screen and (max-width: 490px) {
+  .title-team {
+    padding-top: 6%;
+  }
+}

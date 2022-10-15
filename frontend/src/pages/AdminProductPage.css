@@ -1,0 +1,12 @@
+.categories-container1 {
+  display: flex;
+  justify-content: center;
+}
+.categories {
+  display: flex;
+  width: 20vh;
+  background-color: blue;
+}
+.categ {
+  background-color: blue;
+}

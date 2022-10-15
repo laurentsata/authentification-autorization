@@ -25,3 +25,28 @@
   text-decoration: none;
   color: #fe5e00;
 }
+.admin-navbar a:hover {
+  color: #0d1110;
+  box-shadow: 2px 2px 2px #fe5e00;
+}
+@media screen and (max-width: 490px) {
+  .admin-navbar {
+    padding-right: 9%;
+  }
+  .admin-navbar li {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .admin-navbar a {
+    font-size: 80%;
+  }
+
+  .admin-navbar a:hover {
+    font-size: 80%;
+    border-radius: 15vh;
+    color: #0d1110;
+    /* background-color: #0d1110; */
+    /* background-color: #fe5e00; */
+  }
+}

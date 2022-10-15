@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./AdminProductPage.css";
 import CategoriesCheckbox from "@components/CategoriesCheckbox";
 
 export default function AdminProductPage() {
@@ -42,7 +43,7 @@ export default function AdminProductPage() {
   }
 
   return (
-    <>
+    <div className="product-page-container1">
       <button type="button" onClick={() => navigate("/admin/products")}>
         Retour aux produits
       </button>
@@ -86,20 +87,23 @@ export default function AdminProductPage() {
             })
           }
         />
-        {product.categories ? (
-          <CategoriesCheckbox
-            selectedCategories={product.categories}
-            setSelectedCategories={setSelectedCategories}
-          />
-        ) : (
-          ""
-        )}
-
+        <div className="categ">
+          <div className="categories">
+            {product.categories ? (
+              <CategoriesCheckbox
+                selectedCategories={product.categories}
+                setSelectedCategories={setSelectedCategories}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+        </div>
         <input type="submit" value="Modifier le produit" />
       </form>
       <button type="button" onClick={() => deleteProduct()}>
         Supprimer
       </button>
-    </>
+    </div>
   );
 }

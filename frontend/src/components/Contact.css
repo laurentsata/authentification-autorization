@@ -55,4 +55,7 @@
   .contact-form-message {
     width: 25vh;
   }
+  .contact-section h2 {
+    padding-top: 6%;
+  }
 }

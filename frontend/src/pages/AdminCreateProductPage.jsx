@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import CategoriesCheckbox from "@components/CategoriesCheckbox";
 import { useNavigate } from "react-router-dom";
+import "./AdminCreateProductPage.css";
 
 export default function AdminCreateProductPage() {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function AdminCreateProductPage() {
   };
 
   return (
-    <div>
+    <div className="create-product">
       <p>Page de création d'un produit</p>
       <form
         onSubmit={(e) => {
@@ -95,11 +96,15 @@ export default function AdminCreateProductPage() {
             })
           }
         />
-        <CategoriesCheckbox
-          selectedCategories={selectedCategories}
-          setSelectedCategories={setSelectedCategories}
-        />
-        <input type="submit" value="Créer un produit" />
+        <div className="Checkbox">
+          <CategoriesCheckbox
+            selectedCategories={selectedCategories}
+            setSelectedCategories={setSelectedCategories}
+          />
+        </div>
+        <div className="submit-create">
+          <input type="submit" value="Créer un produit" />
+        </div>
       </form>
     </div>
   );

@@ -21,9 +21,23 @@ export default function Footer() {
       <div className="contact">
         <h2>Contact</h2>
         <p> Adresse 441 rue Charles de Gaulle (ECOCENTRE) à 38920 Crolles</p>
-        <p> Téléphone 04 76 96 48 68 </p>
-        <p> Email philippe.chaussard@orange.fr</p>
-        <p> Informations et nouveautés en direct sur notre Facebook Modelpro</p>
+        <p className="phone">
+          {" "}
+          Téléphone : <a href="tel: 0476964868">&nbsp;04 76 96 48 68 </a>{" "}
+        </p>
+        <p className="desktop">Téléphone : 04 76 96 48 68</p>
+        <p>
+          {" "}
+          Email :{" "}
+          <a href="mailto:philippe.chaussard@orange.fr">
+            philippe.chaussard@orange.fr
+          </a>
+        </p>
+        <p>
+          {" "}
+          Informations et nouveautés en direct sur notre Facebook{" "}
+          <a href="https://www.facebook.com/Modelpro38">Modelpro</a>
+        </p>
       </div>
       <div className="marque">
         {" "}

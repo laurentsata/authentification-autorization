@@ -2,7 +2,6 @@
   display: flex;
   /* justify-content: space-around; */
   flex-direction: column;
-  padding-top: 2%;
 }
 .title {
   display: flex;
@@ -13,7 +12,7 @@
   justify-content: space-around;
 }
 .connection {
-  padding: 5vh;
+  padding: 2vh;
 }
 
 .connection input {
@@ -30,7 +29,7 @@
   width: 150%;
 }
 .inscription {
-  padding: 5vh;
+  padding: 2vh;
 }
 
 .password,
@@ -65,5 +64,8 @@
   .buttonc:hover {
     font-size: 1.5vh;
     background-color: #0d1110;
+  }
+  .title h2 {
+    padding-top: 6%;
   }
 }
