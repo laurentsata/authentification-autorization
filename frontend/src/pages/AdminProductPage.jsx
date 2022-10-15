@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-// import moment from "moment";
 import CategoriesCheckbox from "@components/CategoriesCheckbox";
 
 export default function AdminProductPage() {
@@ -22,14 +21,14 @@ export default function AdminProductPage() {
   // la publication d'un produit - + catégorie ?
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/products/${params.id}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/productsdetails/${params.id}`)
       .then((response) => response.data)
       .then((data) => setProduct(data));
   }, []);
 
   function updateProduct() {
     axios
-      .put(`${import.meta.env.VITE_BACKEND_URL}/products/${params.id}`, {
+      .put(`${import.meta.env.VITE_BACKEND_URL}/productsdetails/${params.id}`, {
         ...product,
         categories: selectedCategories,
       })
@@ -54,6 +53,17 @@ export default function AdminProductPage() {
           updateProduct();
         }}
       >
+        <input
+          type="text"
+          value={product.id}
+          placeholder="Id"
+          onChange={(e) =>
+            setProduct({
+              ...product,
+              id: e.target.value,
+            })
+          }
+        />
         <input
           type="text"
           value={product.name}

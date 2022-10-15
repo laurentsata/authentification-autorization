@@ -47,10 +47,6 @@ export default function AdminCategoryPage() {
             })
           }
         />
-        {/* <CategoriesCheckbox
-          selectedCategories={selectedCategories}
-          setSelectedCategories={setSelectedCategories}
-        /> */}
         <input
           type="text"
           value={category.name}

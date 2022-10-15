@@ -137,83 +137,6 @@ const destroy = (req, res) => {
   models.product.deleteCategories(req.params.id);
 };
 
-// const edit = (req, res) => {
-//   const product = req.body;
-
-//   // TODO validations (length, format...)
-
-//   product.id = parseInt(req.params.id, 10);
-
-//   models.product
-//     .update(product)
-//     .then(([result]) => {
-//       if (result.affectedRows === 0) {
-//         res.sendStatus(404);
-//       } else {
-//         res.sendStatus(204);
-//       }
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.sendStatus(500);
-//     });
-// };
-
-// const add = (req, res) => {
-//   const product = req.body;
-
-//   // TODO validations (length, format...)
-
-//   models.product
-//     .insert(product)
-//     .then(([result]) => {
-//       res.location(`/products/${result.insertId}`).sendStatus(201);
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.sendStatus(500);
-//     });
-// };
-
-// const destroy = (req, res) => {
-//   models.product
-//     .delete(req.params.id)
-//     .then(([result]) => {
-//       if (result.affectedRows === 0) {
-//         res.sendStatus(404);
-//       } else {
-//         res.sendStatus(204);
-//       }
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.sendStatus(500);
-//     });
-// };
-
-// const readProductsDetails = (req, res) => {
-//   models.product
-//     .getProductsDetails()
-//     .then(([rows]) => {
-//       res.send(rows);
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.sendStatus(500);
-//     });
-// };
-// const readProductsCategory = (req, res) => {
-//   models.product
-//     .getProductWithCategory()
-//     .then(([rows]) => {
-//       res.send(rows);
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.sendStatus(500);
-//     });
-// };
-
 module.exports = {
   browse,
   read,
@@ -223,8 +146,4 @@ module.exports = {
   update,
   post,
   destroy,
-  // edit,
-  // add,
-  // readProductsDetails,
-  // readProductsCategory,
 };

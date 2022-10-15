@@ -14,3 +14,11 @@
   font-size: 120%;
   text-align: center;
 }
+@media screen and (max-width: 490px) {
+  .time,
+  .contact,
+  .marque {
+    font-size: 40%;
+    text-align: center;
+  }
+}

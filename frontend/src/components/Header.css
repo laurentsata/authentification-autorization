@@ -20,6 +20,9 @@
   text-decoration: none;
   color: #0d1110;
 }
+.navbar a:hover {
+  color: #fe5e00;
+}
 .deconnexion button {
   color: #ffffff;
   background-color: #fe5e00;
@@ -27,4 +30,30 @@
   border: none;
   margin-left: 2%;
   margin-top: 2%;
+}
+
+@media screen and (max-width: 490px) {
+  .logo img {
+    width: 45%;
+    padding-left: 28%;
+  }
+
+  .navbar {
+    padding-right: 10%;
+  }
+  .navbar li {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .navbar a {
+    font-size: 80%;
+  }
+  .navbar a:hover {
+    font-size: 80%;
+    border-radius: 15vh;
+    color: #ffffff;
+    background-color: #fe5e00;
+    /* background-color: #fe5e00; */
+  }
 }

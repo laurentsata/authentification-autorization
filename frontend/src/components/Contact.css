@@ -6,31 +6,33 @@
 }
 .your-name {
   display: flex;
-  padding-left: 5%;
+  /* padding-left: 5%; */
   padding-bottom: 1%;
 }
 .your-mail {
   display: flex;
-  padding-left: 5%;
+  /* padding-left: 5%; */
   padding-bottom: 1%;
 }
 .subject {
   display: flex;
-  padding-left: 5%;
+  /* padding-left: 5%; */
   padding-bottom: 1%;
 }
 .message {
-  display: flex;
-  padding-left: 5%;
+  /* display: flex; */
+  /* padding-left: 5.7%; */
   padding-bottom: 1%;
 }
 .contact-form-message {
-  width: 35%;
+  width: 30vh;
   height: 20vh;
 }
 .bottom {
   display: flex;
   padding-left: 21%;
+  padding-top: 5%;
+  padding-bottom: 15.8%;
 }
 .contact-form-btn {
   background-color: #fe5e00;
@@ -43,4 +45,14 @@
 .contact-form-message {
   border-color: #fe5e00;
   border-width: 0.3vh;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 490px) {
+  .contact-form-message {
+    width: 25vh;
+  }
 }

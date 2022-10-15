@@ -30,19 +30,19 @@ export default function Header() {
         <nav>
           <ul>
             <Link to="/">
-              <li>Accueil</li>
+              <li> Accueil </li>
             </Link>
             {!isAuthenticated && (
               <Link to="/login">
-                <li>Mon compte</li>
+                <li> Mon compte </li>
               </Link>
             )}
             <Link to="/contact">
-              <li>Boite à question</li>
+              <li> Boite à question </li>
             </Link>
 
             <Link to="/teams">
-              <li>Team</li>
+              <li> Team </li>
             </Link>
             {/* ********************************** */}
 

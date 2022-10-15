@@ -101,35 +101,23 @@
   font-size: 70%;
 }
 /*******************************************************/
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 490px) {
   .listContainer {
     display: flex;
-    flex-direction: column;
-    /* border: 2px solid black; */
-    width: 100%;
-    height: 90%;
-    background-color: white;
-  }
-  .listPrice {
-    /*dimensions cartes*/
-    display: flex;
-    justify-content: center;
-    width: 30vh;
-    height: 13vh;
-    /* border: 2px solid rgb(200, 6, 6); */
   }
 
   .listPrice img {
-    /*dimensions images dans cartes */
-    width: 14.1vh;
-    height: 12.5vh;
+    padding-left: 23%;
+    width: 55%;
+    /* height: 50%; */
+    border-radius: 10px;
   }
 
   .listProducts {
     /* dimensions cartes   */
     display: flex;
-    margin-right: 10%;
-    margin-left: 10%;
+    /* margin-right: 10%;
+    margin-left: 10%; */
     margin-bottom: 5%;
     width: 30%;
   }

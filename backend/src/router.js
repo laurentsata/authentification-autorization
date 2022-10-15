@@ -22,6 +22,9 @@ router.delete("/products/:id", productControllers.destroy);
 // router.get("/products/:id", productControllers.read);
 // router.get("/categories/:id", categoryControllers.read);
 router.get("/productsdetails", productControllers.getAll);
+
+router.get("/productsdetails/:id", productControllers.getById);
+
 router.get("/productsdetailsAdmin", productControllers.getAll);
 
 router.post("/api/users", hashPassword, userControllers.postUser, sendEmail);
