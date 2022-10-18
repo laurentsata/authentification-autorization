@@ -1,12 +1,44 @@
 .categories-container1 {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 }
 .categories {
   display: flex;
   width: 20vh;
-  background-color: blue;
+  /* background-color: blue; */
 }
-.categ {
+/* .categ {
   background-color: blue;
+} */
+.product-page-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-page-container1 input {
+  display: flex;
+}
+.return,
+.modify,
+.delete {
+  background-color: #fe5e00;
+  border-radius: 15vh;
+  border: none;
+  color: #ffffff;
+}
+.return {
+  margin-left: 2%;
+  margin-top: 2%;
+}
+.modify {
+  margin-top: 2%;
+}
+.delete {
+  margin-left: 2%;
+  margin-top: 1%;
+}
+.return:hover,
+.modify:hover,
+.delete:hover {
+  background-color: #0d1110;
 }

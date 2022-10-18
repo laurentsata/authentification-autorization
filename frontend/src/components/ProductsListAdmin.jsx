@@ -23,7 +23,7 @@ function ProductsListAdmin() {
     <div className="leon1">
       {products &&
         products.map((product) => (
-          <Link to={`/productsdetails/${product.id}`} key={product.id}>
+          <Link to={`/admin/products/${product.id}`} key={product.id}>
             <Product
               key={product.id}
               id={product}

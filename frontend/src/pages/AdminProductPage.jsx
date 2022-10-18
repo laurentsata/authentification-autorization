@@ -14,6 +14,8 @@ export default function AdminProductPage() {
     price: "",
     image: "",
     description: "",
+    energy_id: "",
+    categories: [],
   });
 
   const [selectedCategories, setSelectedCategories] = useState("");
@@ -22,14 +24,14 @@ export default function AdminProductPage() {
   // la publication d'un produit - + catégorie ?
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/productsdetails/${params.id}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/products/${params.id}`)
       .then((response) => response.data)
       .then((data) => setProduct(data));
   }, []);
 
   function updateProduct() {
     axios
-      .put(`${import.meta.env.VITE_BACKEND_URL}/productsdetails/${params.id}`, {
+      .put(`${import.meta.env.VITE_BACKEND_URL}/products/${params.id}`, {
         ...product,
         categories: selectedCategories,
       })
@@ -44,66 +46,116 @@ export default function AdminProductPage() {
 
   return (
     <div className="product-page-container1">
-      <button type="button" onClick={() => navigate("/admin/products")}>
+      <button
+        className="return"
+        type="button"
+        onClick={() => navigate("/admin/products")}
+      >
         Retour aux produits
       </button>
-      <h2>Page d'un produit</h2>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          updateProduct();
-        }}
-      >
-        <input
-          type="text"
-          value={product.id}
-          placeholder="Id"
-          onChange={(e) =>
-            setProduct({
-              ...product,
-              id: e.target.value,
-            })
-          }
-        />
-        <input
-          type="text"
-          value={product.name}
-          placeholder="Nom"
-          onChange={(e) =>
-            setProduct({
-              ...product,
-              name: e.target.value,
-            })
-          }
-        />
-        <input
-          type="text"
-          value={product.price}
-          placeholder="Prix du produit"
-          onChange={(e) =>
-            setProduct({
-              ...product,
-              content: e.target.value,
-            })
-          }
-        />
-        <div className="categ">
-          <div className="categories">
-            {product.categories ? (
-              <CategoriesCheckbox
-                selectedCategories={product.categories}
-                setSelectedCategories={setSelectedCategories}
-              />
-            ) : (
-              ""
-            )}
+      <div className="product-page-container2">
+        <h2>Page d'un produit</h2>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            updateProduct();
+          }}
+        >
+          <input
+            type="text"
+            value={product.id}
+            placeholder="Id"
+            onChange={(e) =>
+              setProduct({
+                ...product,
+                id: e.target.value,
+              })
+            }
+          />
+          <input
+            type="text"
+            value={product.name}
+            placeholder="Id"
+            onChange={(e) =>
+              setProduct({
+                ...product,
+                name: e.target.value,
+              })
+            }
+          />
+          <input
+            type="text"
+            value={product.price}
+            placeholder="Prix du produit"
+            onChange={(e) =>
+              setProduct({
+                ...product,
+                price: e.target.value,
+              })
+            }
+          />
+          <input
+            type="text"
+            value={product.image}
+            placeholder="Image du produit"
+            onChange={(e) =>
+              setProduct({
+                ...product,
+                image: e.target.value,
+              })
+            }
+          />
+          <input
+            type="text"
+            value={product.description}
+            placeholder="Description"
+            onChange={(e) =>
+              setProduct({
+                ...product,
+                description: e.target.value,
+              })
+            }
+          />
+          <input
+            type="text"
+            value={product.energy_id}
+            placeholder="Energy"
+            onChange={(e) =>
+              setProduct({
+                ...product,
+                energy_id: e.target.value,
+              })
+            }
+          />
+          <div className="categ">
+            <div className="categories">
+              {product.categories ? (
+                <CategoriesCheckbox
+                  selectedCategories={product.categories}
+                  setSelectedCategories={setSelectedCategories}
+                />
+              ) : (
+                ""
+              )}
+            </div>
           </div>
-        </div>
-        <input type="submit" value="Modifier le produit" />
-      </form>
-      <button type="button" onClick={() => deleteProduct()}>
-        Supprimer
-      </button>
+          <button
+            className="modify"
+            type="button"
+            onClick={() => updateProduct()}
+          >
+            Modifier
+          </button>
+          {/* <input type="submit" value="Modifier le produit" /> */}
+        </form>
+        <button
+          className="delete"
+          type="button"
+          onClick={() => deleteProduct()}
+        >
+          Supprimer
+        </button>
+      </div>
     </div>
   );
 }

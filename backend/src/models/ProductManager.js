@@ -32,7 +32,7 @@ class ProductManager extends AbstractManager {
       [
         product.name,
         product.image,
-        product.describe,
+        product.description,
         product.price,
         product.energy_id,
         product.id,
@@ -42,7 +42,7 @@ class ProductManager extends AbstractManager {
 
   findAllWithCategory() {
     return this.connection
-      .query(`select product.id, product.name, product.price, product.image, product.description, energy.name, energy.image as energy_id, JSON_ARRAYAGG(JSON_OBJECT("ID", category.id, "Type", category.name)) as categories from ${this.table}
+      .query(`select product.id, product.price, product.name, product.image, product.description, energy.name, energy.image as energy_id, JSON_ARRAYAGG(JSON_OBJECT("ID", category.id, "Type", category.name)) as categories from ${this.table}
     left join product_category ON product_category.product_id = product.id
     left join category on product_category.category_id = category.id
     join energy on product.energy_id = energy.id
@@ -51,12 +51,21 @@ class ProductManager extends AbstractManager {
 
   findWithCategory(id) {
     return this.connection.query(
-      `select product.id, product.name, product.price, product.image, product.decription, energy.name, energy.image as energy_id, JSON_ARRAYAGG(JSON_OBJECT("ID", category.id, category.name)) as categories from ${this.table}
+      `select product.id, product.name, product.price, product.image, product.description, energy.id as energy_id, JSON_ARRAYAGG(JSON_OBJECT("ID", category.id, "Type", category.id)) as categories from ${this.table}
+      left join energy on product.energy_id = energy.id
       left join product_category ON product_category.product_id = product.id
       left join category on product_category.category_id = category.id where product.id = ?`,
       [id]
     );
   }
+  // findWithCategory(id) {
+  //   return this.connection.query(
+  //     `select product.id, product.name, product.price, product.image, product.decription, energy.name, energy.image as energy_id, JSON_ARRAYAGG(JSON_OBJECT("ID", category.id, category.name)) as categories from ${this.table}
+  //     left join product_category ON product_category.product_id = product.id
+  //     left join category on product_category.category_id = category.id where product.id = ?`
+  //     [id]
+  //   );
+  // }
 
   deleteCategories(productId) {
     return this.connection.query(

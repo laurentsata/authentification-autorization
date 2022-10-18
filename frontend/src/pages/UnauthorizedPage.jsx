@@ -8,7 +8,7 @@ export default function UnauthorizedPage() {
   useEffect(() => {
     setTimeout(() => {
       navigate("/");
-    }, 5000);
+    }, 6000);
   }, []);
 
   return (
