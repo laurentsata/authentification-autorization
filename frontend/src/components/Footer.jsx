@@ -20,7 +20,7 @@ export default function Footer() {
       </div>
       <div className="contact">
         <h2>Contact</h2>
-        <p> Adresse 441 rue Charles de Gaulle (ECOCENTRE) à 38920 Crolles</p>
+        <p> 441 rue Charles de Gaulle (ECOCENTRE) 38920 Crolles</p>
         <p className="phone">
           {" "}
           Téléphone : <a href="tel: 0476964868">&nbsp;04 76 96 48 68 </a>{" "}
@@ -35,8 +35,8 @@ export default function Footer() {
         </p>
         <p>
           {" "}
-          Informations et nouveautés en direct sur notre Facebook{" "}
-          <a href="https://www.facebook.com/Modelpro38">Modelpro</a>
+          Informations et nouveautés en direct sur notre{" "}
+          <a href="https://www.facebook.com/Modelpro38">Facebook</a>
         </p>
       </div>
       <div className="marque">
